@@ -31,9 +31,9 @@ window.onload = function ()
   {
     clearInterval(Interval);
     tens = 00;
-  	seconds = 00;
+    seconds = 00;
     appendTens.innerHTML = formatTwoPlaces(tens);
-  	appendSeconds.innerHTML = formatTwoPlaces(seconds);
+    appendSeconds.innerHTML = formatTwoPlaces(seconds);
     resetTable();
   }
   
