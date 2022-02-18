@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #ffa600;
+  background: var(--bg-color);
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   height: 100%;
 }
@@ -17,9 +17,9 @@ body {
   text-align: center;
 }
 
-h1, h2, h3 {
+h1 {
   font-family: "Roboto", sans-serif;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 2.6em;
   text-transform: uppercase;
 }
@@ -33,7 +33,7 @@ button {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   -khtml-border-radius: 5px;
-  background: #ffa600;
+  background: var(--btn-color);
   color: #fff;
   border: solid 1px #fff;
   text-decoration: none;
@@ -44,11 +44,30 @@ button {
   margin: 10px;
   outline: none;
 }
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 button:hover {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   background: #fff;
   border: solid 1px #fff;
-  color: #ffa600;
+  color: var(--btn-color);
+}
+
+table, th, td {
+  border: 3px solid var(--btn-color);
+  border-collapse: collapse;
+}
+
+th, td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 80px;
+  padding-right: 80px;
+  width: 33%;
 }
