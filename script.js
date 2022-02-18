@@ -9,26 +9,32 @@ window.onload = function ()
   var buttonReset = document.getElementById('button-reset');
   let table = document.getElementById('timeTable');
   let tbodyRef = table.getElementsByTagName('tbody')[0];
-  var Interval ;
+  var Interval;
 
   buttonStart.onclick = function()
   {
     clearInterval(Interval);
     Interval = setInterval(startTimer, 10);
+    recordData("start");
+    disableEnableBtns();
   }
   
   buttonStop.onclick = function()
   {
     clearInterval(Interval);
+    recordData("stop");
+    recordData("diff");
+    disableEnableBtns();
   }
   
   buttonReset.onclick = function()
   {
     clearInterval(Interval);
-    tens = "00";
-  	seconds = "00";
-    appendTens.innerHTML = tens;
-  	appendSeconds.innerHTML = seconds;
+    tens = 00;
+  	seconds = 00;
+    appendTens.innerHTML = formatTwoPlaces(tens);
+  	appendSeconds.innerHTML = formatTwoPlaces(seconds);
+    resetTable();
   }
   
   function startTimer ()
@@ -37,7 +43,7 @@ window.onload = function ()
     
     if(tens <= 9)
     {
-      appendTens.innerHTML = "0" + tens;
+      appendTens.innerHTML = formatTwoPlaces(tens);
     }
     
     if (tens > 9)
@@ -49,9 +55,9 @@ window.onload = function ()
     {
       console.log("seconds");
       seconds++;
-      appendSeconds.innerHTML = "0" + seconds;
+      appendSeconds.innerHTML = formatTwoPlaces(seconds);
       tens = 0;
-      appendTens.innerHTML = "0" + 0;
+      appendTens.innerHTML = formatTwoPlaces(0);
     }
     
     if (seconds > 9)
