@@ -1,5 +1,9 @@
-/* Variabes */
-/* Mixin's */
+/* Variables */
+:root {
+  --bg-color: #31DC62;
+  --btn-color: #18B645
+}
+
 body {
   background: #ffa600;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
